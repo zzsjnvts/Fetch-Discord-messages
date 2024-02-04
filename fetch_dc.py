@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 
 channel_id = input("enter channel id:")
+my_token  = input("enter your bot token:")
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='!', intents=intents)
 
@@ -16,6 +17,4 @@ async def on_ready():
             print("Channel not found. Make sure the bot has access to the specified channel.")
     except Exception as e:
         print(f'Error: {e}')
-
-
-bot.run()
+bot.run(my_token)
